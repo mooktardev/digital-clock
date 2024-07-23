@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="hero">
+      <h1>Digital Clock</h1>
+      <div class="box">
+        <div class="clock">
+          <span id="hrs">00</span>
+          <span>:</span>
+          <span id="mins">00</span>
+          <span>:</span>
+          <span id="secs">00</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Select span elements
+      const hrsSpan = document.querySelector("#hrs");
+      const minsSpan = document.querySelector("#mins");
+      const secsSpan = document.querySelector("#secs");
+      // Update Clock every seconds
+      setInterval(() => {
+        const currentTime = new Date();
+        hrsSpan.innerHTML =
+          (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours();
+        minsSpan.innerHTML =
+          (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes();
+        secsSpan.innerHTML =
+          (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
+      }, 1000);
+    </script>
+  </body>
+</html>
